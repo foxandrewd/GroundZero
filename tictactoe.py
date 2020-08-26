@@ -106,8 +106,10 @@ def check_diag_win(gameboard_state):
 # Here are a few tests to make sure we're correctly identifying each of
 # the different types of winning states, and the draw/tie state:  
 
-# Row numbers are: 0, 1, 2
-# Col numbers are: 0, 1, 2
+# Row numbers are: 0, 1, 2 for a 3x3 Game
+# Col numbers are: 0, 1, 2 for a 3x3 Game
+# Diag1 is the cells (0,0), (1,1), (2,2) for a 3x3 Game
+# Diag2 is the cells (0,2), (1,1), (2,0) for a 3x3 Game
 
 X_win_row_1 = [ ['O','' ,'O'],
                 ['X','X','X'],
