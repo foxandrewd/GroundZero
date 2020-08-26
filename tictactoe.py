@@ -13,15 +13,15 @@ import sys, os
 import numpy as np
 import pandas as pd
 
-CONST_GAME_SIZE = 3
+CONST_GAME_SIZE = 3     # Indicates we want a 3x3 game of Tic-Tac-Toe
 
-X_WIN_STRING = 'X'*CONST_GAME_SIZE    # i.e. 'XXX'
-O_WIN_STRING = 'O'*CONST_GAME_SIZE    # i.e. 'OOO'
+X_WIN_STRING = 'X'*CONST_GAME_SIZE    # i.e. 'XXX' for a 3x3 Game
+O_WIN_STRING = 'O'*CONST_GAME_SIZE    # i.e. 'OOO' for a 3x3 Game
 
-gameboard_state = [ ['','',''],
-                ['','',''],
-                ['','','']
-              ]
+gameboard_state = [ ['','',''],       # A blank (starting) gameboard state
+                    ['','',''],
+                    ['','','']
+                  ]
 
 def newgame_clear_board(gameboard_state):
     for i in range(CONST_GAME_SIZE):
@@ -103,48 +103,40 @@ def check_diag_win(gameboard_state):
             return 'O'
     return '-'
 
+# Here are a few tests to make sure we're correctly identifying each of
+# the different types of winning states, and the draw/tie state:  
+
 # Row numbers are: 0, 1, 2
 # Col numbers are: 0, 1, 2
 
-X_win_row_1 = [ ['O','','O'],
+X_win_row_1 = [ ['O','' ,'O'],
                 ['X','X','X'],
-                ['','O','']
+                ['' ,'O','' ]
               ]
 
-O_win_col_2 = [ ['','X','O'],
-                ['','X','O'],
-                ['','O','O']
+O_win_col_2 = [ ['' ,'X','O'],
+                ['' ,'X','O'],
+                ['' ,'O','O']
               ]
 
-X_win_diag1 = [ ['X','','X'],
-                ['','X','X'],
-                ['','X','X']
+X_win_diag1 = [ ['X','' ,'X'],
+                ['' ,'X','X'],
+                ['' ,'X','X']
               ]
 
-
-O_win_diag2 = [ ['','','O'],
-                ['','O','X'],
+O_win_diag2 = [ ['' ,'' ,'O'],
+                ['' ,'O','X'],
                 ['O','X','X']
               ]
-
 
 a_draw_state = [ ['X','O','O'],
                  ['O','X','X'],
                  ['O','X','O']
                ]
-    
 
-w = check_row_win(X_win_row_1)
-print(w)
-
-x = check_column_win(O_win_col_2)
-print(x)
-
-y = check_diag_win(X_win_diag1)
-print(y)
-
-z = check_diag_win(O_win_diag2)
-print(z)
-
-a = check_draw(a_draw_state)
-print(a)
+# Run the tests. Should print out 'X', 'O', 'X', 'O', 'True'
+w = check_row_win(X_win_row_1); print(w)
+x = check_column_win(O_win_col_2); print(x)
+y = check_diag_win(X_win_diag1); print(y)
+z = check_diag_win(O_win_diag2); print(z)
+a = check_draw(a_draw_state); print(a)
