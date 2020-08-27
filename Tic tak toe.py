@@ -99,6 +99,7 @@ def toggleButtonText(clicked_button):
 #button7 = Button(tkWindow, text='Submit', command=toggleText7, padx=50, pady=50)
 #button8 = Button(tkWindow, text='Submit', command=toggleText8, padx=50, pady=50)
 
+# Add 9 button elements to the window 'tkWindow', with initial text of "Submit"
 button0 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button0), padx=50, pady=50)
 button1 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button1), padx=50, pady=50)
 button2 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button2), padx=50, pady=50)
@@ -109,7 +110,7 @@ button6 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(butto
 button7 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button7), padx=50, pady=50)
 button8 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button8), padx=50, pady=50)
 
-
+# Define how the 9 buttons will be laid out inside the window 'tkWindow':
 button0.grid(row=0, column=0)
 button1.grid(row=0, column=1)
 button2.grid(row=0, column=2)
@@ -119,4 +120,6 @@ button5.grid(row=1, column=2)
 button6.grid(row=2, column=0)
 button7.grid(row=2, column=1)
 button8.grid(row=2, column=2)
+
+### Run the Tkinter GUI !!!
 tkWindow.mainloop()
