@@ -12,8 +12,8 @@ import pandas as pd
 
 CONST_GAME_SIZE = 3     # Indicates we want a 3x3 game of Tic-Tac-Toe
 
-X_WIN_STRING = 'X'*CONST_GAME_SIZE    # i.e. 'XXX' for a 3x3 Game
-O_WIN_STRING = 'O'*CONST_GAME_SIZE    # i.e. 'OOO' for a 3x3 Game
+X_WIN_STRING = 'XXX'
+O_WIN_STRING = 'OOO'
 
 gameboard_state = [ ['','',''],       # A blank (starting) gameboard state
                     ['','',''],
@@ -21,8 +21,8 @@ gameboard_state = [ ['','',''],       # A blank (starting) gameboard state
                   ]
 
 def newgame_clear_board(gameboard_state):
-    for i in range(CONST_GAME_SIZE):
-        for j in range(CONST_GAME_SIZE):
+    for i in range(3):
+        for j in range(3):
             gameboard_state[i][j] = ''
     return gameboard_state
 
@@ -31,8 +31,8 @@ def implement_a_valid_move(gameboard_state, player, row, col):
   return gameboard_state
 
 def gameboard_is_full(gameboard_state):
-    for i in range(CONST_GAME_SIZE):
-        for j in range(CONST_GAME_SIZE):
+    for i in range(3):
+        for j in range(3):
             if gameboard_state[i][j] == '':
                 return False
     # All the board positions were filled with X or O. Hence, it's full.
@@ -61,9 +61,9 @@ def check_draw(gameboard_state):
         else:                            return True
 
 def check_row_win(gameboard_state):
-    for i in range(CONST_GAME_SIZE):
+    for i in range(3):
         row_string = ''
-        for j in range(CONST_GAME_SIZE):
+        for j in range(3):
             row_string += gameboard_state[i][j]
         if row_string == X_WIN_STRING:
             return 'X'
@@ -74,12 +74,12 @@ def check_row_win(gameboard_state):
 def check_column_win(gameboard_state):
     # Notation is as: GBS[i][j] is GBS[row_i][column_j]
     # An example win for X would be GBS[0][2]=='X' and GBS[1][2]=='X' and GBS[2][2]=='X'
-    column_strings = ['']*CONST_GAME_SIZE
-    for i in range(CONST_GAME_SIZE):        # i refers to Row number
-        for j in range(CONST_GAME_SIZE):    # j refers to Column number
+    column_strings = ['', '', '']
+    for i in range(3):        # i refers to Row number
+        for j in range(3):    # j refers to Column number
             column_strings[j] += gameboard_state[i][j]
 
-    for col_j in range(CONST_GAME_SIZE):
+    for col_j in range(3):
         column_str = column_strings[col_j]
         if column_str == X_WIN_STRING:
             return 'X'
@@ -89,14 +89,14 @@ def check_column_win(gameboard_state):
 
 def check_diag_win(gameboard_state):
     diag_1_str = '' ; diag_2_str = '' ;
-    for x in range(CONST_GAME_SIZE):
+    for x in range(3):
         diag_1_str += gameboard_state[x][x]
         if diag_1_str == X_WIN_STRING:
             return 'X'
         elif diag_1_str == O_WIN_STRING:
             return 'O'
-    for x in range(CONST_GAME_SIZE):
-        diag_2_str += gameboard_state[CONST_GAME_SIZE-1-x][x]
+    for x in range(3):
+        diag_2_str += gameboard_state[3-1-x][x]
         if diag_2_str == X_WIN_STRING:
             return 'X'
         elif diag_2_str == O_WIN_STRING:
