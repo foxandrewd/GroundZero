@@ -39,17 +39,17 @@ def gameboard_is_full(gameboard_state):
     return True
 
 def X_has_won(gameboard_state):
-    if check_row_win(gameboard_state)       == 'X' \
-       or check_column_win(gameboard_state) == 'X' \
-       or check_diag_win(gameboard_state)   == 'X':
+    if check_row_win(gameboard_state)       == X_WIN_STRING \
+       or check_column_win(gameboard_state) == X_WIN_STRING \
+       or check_diag_win(gameboard_state)   == X_WIN_STRING:
         return True
     else:
         return False
 
 def O_has_won(gameboard_state):
-    if check_row_win(gameboard_state)       == 'O' \
-       or check_column_win(gameboard_state) == 'O' \
-       or check_diag_win(gameboard_state)   == 'O':
+    if check_row_win(gameboard_state)       == O_WIN_STRING \
+       or check_column_win(gameboard_state) == O_WIN_STRING \
+       or check_diag_win(gameboard_state)   == O_WIN_STRING:
         return True
     else:
         return False
@@ -66,9 +66,9 @@ def check_row_win(gameboard_state):
         for j in range(3):
             row_string += gameboard_state[i][j]
         if row_string == X_WIN_STRING:
-            return 'X'
+            return X_WIN_STRING
         elif row_string == O_WIN_STRING:
-            return 'O'
+            return O_WIN_STRING
     return '-'
 
 def check_column_win(gameboard_state):
@@ -82,9 +82,9 @@ def check_column_win(gameboard_state):
     for col_j in range(3):
         column_str = column_strings[col_j]
         if column_str == X_WIN_STRING:
-            return 'X'
+            return X_WIN_STRING
         elif column_str == O_WIN_STRING:
-            return 'O'
+            return O_WIN_STRING
     return '-'
 
 def check_diag_win(gameboard_state):
@@ -92,15 +92,15 @@ def check_diag_win(gameboard_state):
     for x in range(3):
         diag_1_str += gameboard_state[x][x]
         if diag_1_str == X_WIN_STRING:
-            return 'X'
+            return X_WIN_STRING
         elif diag_1_str == O_WIN_STRING:
-            return 'O'
+            return O_WIN_STRING
     for x in range(3):
         diag_2_str += gameboard_state[3-1-x][x]
         if diag_2_str == X_WIN_STRING:
-            return 'X'
+            return X_WIN_STRING
         elif diag_2_str == O_WIN_STRING:
-            return 'O'
+            return O_WIN_STRING
     return '-'
 
 # Here are a few tests to make sure we're correctly identifying each of
@@ -136,7 +136,7 @@ a_draw_state = [ ['X','O','O'],
                  ['O','X','O']
                ]
 
-# Run the tests. Should print out 'X', 'O', 'X', 'O', 'True'
+# Run the tests. Should print out 'XXX', 'OOO', 'XXX', 'OOO', 'True'
 w = check_row_win(X_win_row_1);    print(w)
 x = check_column_win(O_win_col_2); print(x)
 y = check_diag_win(X_win_diag1);   print(y)
