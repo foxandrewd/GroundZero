@@ -14,7 +14,6 @@ def toggleText0():
     else:
         button0['text'] = 'Submit'
 
-
 def toggleText1():
     if (button1['text'] == 'Submit'):
         button1['text'] = 'X'
@@ -80,7 +79,7 @@ def toggleText8():
         button8['text'] = 'Submit'
 """
 
-def toggleButtonText( clicked_button ):
+def toggleButtonText(clicked_button):
     if (clicked_button['text'] == 'Submit'):
         clicked_button['text'] = 'X'
     elif (clicked_button['text'] == 'X'):
@@ -88,7 +87,7 @@ def toggleButtonText( clicked_button ):
     else:
         clicked_button['text'] = 'Submit'
 
-# Comment these out because we need to use the new "toggleButtonText()" function now
+# Comment these out because we can use the new "toggleButtonText(clicked_button)" function now
 #button0 = Button(tkWindow, text='Submit', command=toggleText0, padx=50, pady=50)
 #button1 = Button(tkWindow, text='Submit', command=toggleText1, padx=50, pady=50)
 #button2 = Button(tkWindow, text='Submit', command=toggleText2, padx=50, pady=50)
