@@ -4,8 +4,8 @@ tkWindow = Tk()
 tkWindow.title('PythonExamples.org - Tkinter Example')
 
 """
-### Comment out all the Individual ToggleText functions, as further below a new Generalised one
-### is implemented that can do the work of all these, but more concisely.
+### Comment out all the Individual ToggleText functions, as further below a new Generalised function
+### is implemented that can do the work of all these, but more concisely. It uses a single parameter to achieve this.
 def toggleText0():
     if (button0['text'] == 'Submit'):
         button0['text'] = 'X'
@@ -87,7 +87,8 @@ def toggleButtonText(clicked_button):
     else:
         clicked_button['text'] = 'Submit'
 
-# Comment these out because we can use the new "toggleButtonText(clicked_button)" function now
+# Comment these out because we can use the new generalised "toggleButtonText(clicked_button)" function now
+# to do the toggling, instead of having to define, and call, an individual function for each single button
 #button0 = Button(tkWindow, text='Submit', command=toggleText0, padx=50, pady=50)
 #button1 = Button(tkWindow, text='Submit', command=toggleText1, padx=50, pady=50)
 #button2 = Button(tkWindow, text='Submit', command=toggleText2, padx=50, pady=50)
