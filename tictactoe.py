@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Aug 26 14:22:26 2020
-
 Project Zero - "GroundZero" project
-
 Developers: Andrew Fox and Reuben Corrigan
-
-@author: foxa
+@authors: Andrew Fox, Reuben Corrigan
 """
 
 import sys, os
@@ -137,8 +134,8 @@ a_draw_state = [ ['X','O','O'],
                ]
 
 # Run the tests. Should print out 'X', 'O', 'X', 'O', 'True'
-w = check_row_win(X_win_row_1); print(w)
+w = check_row_win(X_win_row_1);    print(w)
 x = check_column_win(O_win_col_2); print(x)
-y = check_diag_win(X_win_diag1); print(y)
-z = check_diag_win(O_win_diag2); print(z)
-a = check_draw(a_draw_state); print(a)
+y = check_diag_win(X_win_diag1);   print(y)
+z = check_diag_win(O_win_diag2);   print(z)
+a = check_draw(a_draw_state);      print(a)
