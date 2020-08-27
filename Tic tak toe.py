@@ -4,6 +4,8 @@ tkWindow = Tk()
 tkWindow.title('PythonExamples.org - Tkinter Example')
 
 """
+### Comment out all the Individual ToggleText functions, as further below a new Generalised one
+### is implemented that can do the work of all these, but more concisely.
 def toggleText0():
     if (button0['text'] == 'Submit'):
         button0['text'] = 'X'
@@ -86,6 +88,7 @@ def toggleButtonText( clicked_button ):
     else:
         clicked_button['text'] = 'Submit'
 
+# Comment these out because we need to use the new "toggleButtonText()" function now
 #button0 = Button(tkWindow, text='Submit', command=toggleText0, padx=50, pady=50)
 #button1 = Button(tkWindow, text='Submit', command=toggleText1, padx=50, pady=50)
 #button2 = Button(tkWindow, text='Submit', command=toggleText2, padx=50, pady=50)
