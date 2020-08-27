@@ -3,7 +3,7 @@ from tkinter import *
 tkWindow = Tk()
 tkWindow.title('PythonExamples.org - Tkinter Example')
 
-
+"""
 def toggleText0():
     if (button0['text'] == 'Submit'):
         button0['text'] = 'X'
@@ -76,26 +76,36 @@ def toggleText8():
         button8['text'] = 'O'
     else:
         button8['text'] = 'Submit'
+"""
 
+def toggleButtonText( clicked_button ):
+    if (clicked_button['text'] == 'Submit'):
+        clicked_button['text'] = 'X'
+    elif (clicked_button['text'] == 'X'):
+        clicked_button['text'] = 'O'
+    else:
+        clicked_button['text'] = 'Submit'
 
+#button0 = Button(tkWindow, text='Submit', command=toggleText0, padx=50, pady=50)
+#button1 = Button(tkWindow, text='Submit', command=toggleText1, padx=50, pady=50)
+#button2 = Button(tkWindow, text='Submit', command=toggleText2, padx=50, pady=50)
+#button3 = Button(tkWindow, text='Submit', command=toggleText3, padx=50, pady=50)
+#button4 = Button(tkWindow, text='Submit', command=toggleText4, padx=50, pady=50)
+#button5 = Button(tkWindow, text='Submit', command=toggleText5, padx=50, pady=50)
+#button6 = Button(tkWindow, text='Submit', command=toggleText6, padx=50, pady=50)
+#button7 = Button(tkWindow, text='Submit', command=toggleText7, padx=50, pady=50)
+#button8 = Button(tkWindow, text='Submit', command=toggleText8, padx=50, pady=50)
 
-button0 = Button(tkWindow, text='Submit', command=toggleText0, padx=50, pady=50)
+button0 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button0), padx=50, pady=50)
+button1 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button1), padx=50, pady=50)
+button2 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button2), padx=50, pady=50)
+button3 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button3), padx=50, pady=50)
+button4 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button4), padx=50, pady=50)
+button5 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button5), padx=50, pady=50)
+button6 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button6), padx=50, pady=50)
+button7 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button7), padx=50, pady=50)
+button8 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button8), padx=50, pady=50)
 
-button1 = Button(tkWindow, text='Submit', command=toggleText1, padx=50, pady=50)
-
-button2 = Button(tkWindow, text='Submit', command=toggleText2, padx=50, pady=50)
-
-button3 = Button(tkWindow, text='Submit', command=toggleText3, padx=50, pady=50)
-
-button4 = Button(tkWindow, text='Submit', command=toggleText4, padx=50, pady=50)
-
-button5 = Button(tkWindow, text='Submit', command=toggleText5, padx=50, pady=50)
-
-button6 = Button(tkWindow, text='Submit', command=toggleText6, padx=50, pady=50)
-
-button7 = Button(tkWindow, text='Submit', command=toggleText7, padx=50, pady=50)
-
-button8 = Button(tkWindow, text='Submit', command=toggleText8, padx=50, pady=50)
 
 button0.grid(row=0, column=0)
 button1.grid(row=0, column=1)
