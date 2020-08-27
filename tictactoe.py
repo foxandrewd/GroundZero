@@ -26,6 +26,9 @@ def newgame_clear_board(gameboard_state):
             gameboard_state[i][j] = ''
     return gameboard_state
 
+def implement_a_valid_move(gameboard_state, player, row, col):
+  gameboard_state[row][col] = player
+  return gameboard_state
 
 def gameboard_is_full(gameboard_state):
     for i in range(CONST_GAME_SIZE):
