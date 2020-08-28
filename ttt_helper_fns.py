@@ -24,7 +24,7 @@ def newgame_clear_board(gameboard_state):
             gameboard_state[i][j] = ''
     return gameboard_state
   
-def move_is_valid(gameboard_state, player, row, col):
+def move_is_valid(gameboard_state, row, col):
   if gameboard_state[row][col] == '':
     return True
   else:
