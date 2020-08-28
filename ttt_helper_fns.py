@@ -32,7 +32,7 @@ def move_is_valid(gameboard_state, player, row, col):
   else:
     return False
 
-def implement_a_valid_move(gameboard_state, player, row, col):
+def update_gameboard_state(gameboard_state, player, row, col):
   gameboard_state[row][col] = player
   return gameboard_state
 
