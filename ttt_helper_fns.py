@@ -10,8 +10,6 @@ import sys, os
 import numpy as np
 import pandas as pd
 
-CONST_GAME_SIZE = 3     # Indicates we want a 3x3 game of Tic-Tac-Toe
-
 X_WIN_STRING = 'XXX'
 O_WIN_STRING = 'OOO'
 
