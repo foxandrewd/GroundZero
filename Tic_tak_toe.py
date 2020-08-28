@@ -100,6 +100,9 @@ def toggleButtonText(clicked_button):
 #button8 = Button(tkWindow, text='Submit', command=toggleText8, padx=50, pady=50)
 
 # Add 9 button elements to the window 'tkWindow', with initial text of "Submit"
+# It's kind of a quirk of Tkinter that when a button's command function takes a parameter
+# (as is the case here), you have to add the "lambda: " bit before specifying the function name
+# and parameter value that you are passing in. Don't worry about why this is the case for now
 button0 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button0), padx=50, pady=50)
 button1 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button1), padx=50, pady=50)
 button2 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button2), padx=50, pady=50)
