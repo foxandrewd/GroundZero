@@ -2,8 +2,8 @@ import tkinter as tk
 root = tk.Tk()
 
 # Make a 2D grid/array of buttons, inside the Tkinter main window which is called 'root' in this example
-for rowNum in range(5):
-    for colNum in range(5):
+for rowNum in range(3):
+    for colNum in range(3):
         button = tk.Button( root ,
                             text = str(rowNum)+" "+str(colNum) ,
                             command = lambda r=rowNum, c=colNum: printOnClick(r, c)
