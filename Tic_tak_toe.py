@@ -1,4 +1,5 @@
 from tkinter import *
+import ttt_helper_fns
 
 tkWindow = Tk()
 tkWindow.title('PythonExamples.org - Tkinter Example')
