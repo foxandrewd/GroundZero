@@ -6,10 +6,6 @@ Developers: Andrew Fox and Reuben Corrigan
 @authors: Andrew Fox, Reuben Corrigan
 """
 
-import sys, os
-import numpy as np
-import pandas as pd
-
 X_WIN_STRING = 'XXX'
 O_WIN_STRING = 'OOO'
 
