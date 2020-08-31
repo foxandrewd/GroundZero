@@ -49,5 +49,7 @@ def doStuffOnClick(r, c):
           ", Column=" + str(button_col) )                        # Backslash ('\') lets you continue ur code statement on the next line
     if move_is_valid(gameboard_state, button_row, button_col):
         print("That move looks Valid.")
+        update_gameboard_state(gameboard_state, Player, button_row, button_col)
+        (buttons[button_row][button_col])["text"] = Player
 
 tk.mainloop()   # Run the TKinter Main GUI Program, i.e. show it on the screen.
