@@ -88,6 +88,18 @@ def toggleButtonText(clicked_button):
     else:
         clicked_button['text'] = 'Submit'
 
+def restart_program():
+    if (button1['text'] == 'X' or 'O') or (button2['text'] == 'X' or 'O') or (button3['text'] == 'X' or 'O') or (button4['text'] == 'X' or 'O') or (button5['text'] == 'X' or 'O') or (button6['text'] == 'X' or 'O') or (button7['text'] == 'X' or 'O') or (button8['text'] == 'X' or 'O') or (button1['text'] == 'X' or 'O' ):
+        button1['text'] = ''
+        button2['text'] = ''
+        button0['text'] = ''
+        button3['text'] = ''
+        button4['text'] = ''
+        button5['text'] = ''
+        button6['text'] = ''
+        button7['text'] = ''
+        button8['text'] = ''
+
 # Comment these out because we can use the new generalised "toggleButtonText(clicked_button)" function now
 # to do the toggling, instead of having to define, and call, an individual function for each single button
 #button0 = Button(tkWindow, text='Submit', command=toggleText0, padx=50, pady=50)
@@ -104,26 +116,16 @@ def toggleButtonText(clicked_button):
 # It's kind of a quirk of Tkinter that when a button's command function takes a parameter
 # (as is the case here), you have to add the "lambda: " bit before specifying the function name
 # and parameter value that you are passing in. Don't worry about why this is the case for now
-button0 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button0), padx=50, pady=50)
-button1 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button1), padx=50, pady=50)
-button2 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button2), padx=50, pady=50)
-button3 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button3), padx=50, pady=50)
-button4 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button4), padx=50, pady=50)
-button5 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button5), padx=50, pady=50)
-button6 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button6), padx=50, pady=50)
-button7 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button7), padx=50, pady=50)
-button8 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button8), padx=50, pady=50)
-
-# Define how the 9 buttons will be laid out inside the window 'tkWindow':
-button0.grid(row=0, column=0)
-button1.grid(row=0, column=1)
-button2.grid(row=0, column=2)
-button3.grid(row=1, column=0)
-button4.grid(row=1, column=1)
-button5.grid(row=1, column=2)
-button6.grid(row=2, column=0)
-button7.grid(row=2, column=1)
-button8.grid(row=2, column=2)
+button0 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button0), padx=50, pady=50).grid(row=0, column=0)
+button1 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button1), padx=50, pady=50).grid(row=0, column=1)
+button2 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button2), padx=50, pady=50).grid(row=0, column=2)
+button3 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button3), padx=50, pady=50).grid(row=1, column=0)
+button4 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button4), padx=50, pady=50).grid(row=1, column=1)
+button5 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button5), padx=50, pady=50).grid(row=1, column=2)
+button6 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button6), padx=50, pady=50).grid(row=2, column=0)
+button7 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button7), padx=50, pady=50).grid(row=2, column=1)
+button8 = Button(tkWindow, text='Submit', command=lambda: toggleButtonText(button8), padx=50, pady=50).grid(row=2, column=2)
+Button(tkWindow, text="Restart", command=restart_program, padx=50, pady=50).grid(row=3, column=1)
 
 ### Run the Tkinter GUI !!!
 tkWindow.mainloop()
