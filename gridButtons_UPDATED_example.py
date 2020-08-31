@@ -7,9 +7,9 @@ root = tk.Tk()  # Create the top-level TKinter Window object. Here, we called it
 
 Player = "X"    # The player whose Turn it currently is (i.e., "X" or "O")
 
-gameboard_state = [ ['','',''],       # A blank (starting) gameboard state
-                    ['','',''],
-                    ['','',''] ]
+gameboard_state = [  ['','',''] ,       # A blank (starting) gameboard state
+                     ['','',''] ,
+                     ['','','']  ]
 
 def newgame_clear_board(gameboard_state):
   """ Completely clear the state of all spots on the 3x3 GameBoard.
@@ -32,13 +32,25 @@ def move_is_valid(gameboard_state, row, col):
     return False
 
 def update_gameboard_state(gameboard_state, player, row, col):
-  gameboard_state[row][col] = player
+    """ If player=="X", then store "X" at the correct position (i.e., (rox,col) )
+        in the 'gameboard_state' array variable
+    """
+    gameboard_state[row][col] = player
 
+# A Dictionary to contain references to each of the 3x3 = 9 TKinter Buttons in the GUI.
+# Initialise then as blank/empty (i.e., None). We will put the actual buttons
+# into the correct slots during the Button construction double For-loop (see below).
+buttons = {  0: {0:None, 1:None, 2:None} ,
+             1: {0:None, 1:None, 2:None} ,
+             2: {0:None, 1:None, 2:None}  }
 
-buttons = { 0:{0:None,1:None,2:None}, 1:{0:None,1:None,2:None}, 2:{0:None,1:None,2:None} }
-button_pos = {}
+# This 'button_pos' Dictionary (dict) will store the position of where each button is on the GameBoard.
+# So the keys of this dict will be the Button's, and the values of this dict will be the (row,col) tuple
+# specifying where that particular button is on the GameBoard.
+button_pos = {}     # Begin as empty dict, we fill it out during the Button construction double For-loop directly below:
 
-# Make a 2D array of buttons
+# This is the Button construction double For-loop
+# Make the 3x3 array of 9 buttons, store each one of them into the correct slot in the 'buttons' variable we initialised above.
 for rowN in range(3):
     for colN in range(3):
         button = tk.Button(root, text = "", height=3, width=6, command = lambda r=rowN, c=colN: doStuffOnClick(r,c) )
@@ -49,7 +61,8 @@ for rowN in range(3):
     #endfor colN
 #endfor rowN
 
-# Print out some helpful information when we click on one of the buttons in the grid
+# Function: 'doStuffOnClick'
+# What to check and the procedure to follow when the current Player clicks one of the 9 Buttons.
 def doStuffOnClick(r, c):
     theButton = buttons[r][c]
     if DEBUG_LVL >= 2: print("The button name/ID is: " + str(theButton) )
