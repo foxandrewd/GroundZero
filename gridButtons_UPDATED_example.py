@@ -51,5 +51,7 @@ def doStuffOnClick(r, c):
         print("That move looks Valid.")
         update_gameboard_state(gameboard_state, Player, button_row, button_col)
         (buttons[button_row][button_col])["text"] = Player
+    else:
+        print("Invalid move. Someone already played that square.")
 
 tk.mainloop()   # Run the TKinter Main GUI Program, i.e. show it on the screen.
