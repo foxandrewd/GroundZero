@@ -1,5 +1,8 @@
 import tkinter as tk  # Import the TKinter library/module so we can use it
+import ttt_helper_fns
+
 DEBUG_LVL = 3
+
 root = tk.Tk()  # Create the top-level Window object. It's not displayed yet, though!
 
 Player = "X"
