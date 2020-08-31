@@ -2,9 +2,28 @@ import tkinter as tk  # Import the TKinter library/module so we can use it
 DEBUG_LVL = 3
 root = tk.Tk()  # Create the top-level Window object. It's not displayed yet, though!
 
+Player = "X"
+
 gameboard_state = [ ['','',''],       # A blank (starting) gameboard state
                     ['','',''],
                     ['','',''] ]
+
+def newgame_clear_board(gameboard_state):
+    for i in range(3):
+        for j in range(3):
+            gameboard_state[i][j] = ''
+    return gameboard_state
+  
+def move_is_valid(gameboard_state, row, col):
+  if gameboard_state[row][col] == '':
+    return True
+  else:
+    return False
+
+def update_gameboard_state(gameboard_state, player, row, col):
+  gameboard_state[row][col] = player
+  return gameboard_state
+
 
 buttons = { 0:{0:None,1:None,2:None}, 1:{0:None,1:None,2:None}, 2:{0:None,1:None,2:None} }
 button_pos = {}
@@ -25,31 +44,10 @@ def doStuffOnClick(r, c):
     theButton = buttons[r][c]
     print("The button name/ID is: " + str(theButton) )
     theButtonPos = button_pos[theButton]
-    (button_row, button_column) = button_pos[theButton]
+    (button_row, button_col) = button_pos[theButton]
     print("Button Clicked was: Row=" + str(button_row) + \
-          ", Column=" + str(button_column) )                        # Backslash ('\') lets you continue ur code statement on the next line
-    if move_is_valid(gameboard_state, row, col):
+          ", Column=" + str(button_col) )                        # Backslash ('\') lets you continue ur code statement on the next line
+    if move_is_valid(gameboard_state, button_row, button_col):
         print("That move looks Valid.")
 
 tk.mainloop()   # Run the TKinter Main GUI Program, i.e. show it on the screen.
-
-###############################################################################################################
-###############################################################################################################
-###############################################################################################################
-
-def newgame_clear_board(gameboard_state):
-    for i in range(3):
-        for j in range(3):
-            gameboard_state[i][j] = ''
-    return gameboard_state
-  
-def move_is_valid(gameboard_state, row, col):
-  if gameboard_state[row][col] == '':
-    return True
-  else:
-    return False
-
-def update_gameboard_state(gameboard_state, player, row, col):
-  gameboard_state[row][col] = player
-  return gameboard_state
-
