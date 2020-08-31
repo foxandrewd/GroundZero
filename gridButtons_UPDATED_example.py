@@ -37,7 +37,7 @@ def update_gameboard_state(gameboard_state, player, row, col):
     """
     gameboard_state[row][col] = player
 
-# This 'buttons' Dictionary is to contain references to each of the 3x3 = 9 TKinter Buttons in the GUI.
+# This 'buttons' Dictionary (dict) is to contain references to each of the 3x3 = 9 TKinter Buttons in the GUI.
 # We initialise them as blank/empty (i.e., None). We will put the actual Buttons
 # into the correct slots during the Button construction double For-loop (see below).
 buttons = {  0: {0:None, 1:None, 2:None} ,
