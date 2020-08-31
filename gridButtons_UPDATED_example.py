@@ -22,7 +22,6 @@ def move_is_valid(gameboard_state, row, col):
 
 def update_gameboard_state(gameboard_state, player, row, col):
   gameboard_state[row][col] = player
-  return gameboard_state
 
 
 buttons = { 0:{0:None,1:None,2:None}, 1:{0:None,1:None,2:None}, 2:{0:None,1:None,2:None} }
