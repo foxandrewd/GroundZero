@@ -42,16 +42,16 @@ for rowN in range(3):
 # Print out some helpful information when we click on one of the buttons in the grid
 def doStuffOnClick(r, c):
     theButton = buttons[r][c]
-    print("The button name/ID is: " + str(theButton) )
+    if DEBUG_LVL >= 2: print("The button name/ID is: " + str(theButton) )
     theButtonPos = button_pos[theButton]
     (button_row, button_col) = button_pos[theButton]
-    print("Button Clicked was: Row=" + str(button_row) + \
+    if DEBUG_LVL >= 2: print("Button Clicked was: Row=" + str(button_row) + \
           ", Column=" + str(button_col) )                        # Backslash ('\') lets you continue ur code statement on the next line
     if move_is_valid(gameboard_state, button_row, button_col):
-        print("That move looks Valid.")
+        if DEBUG_LVL >= 1: print("That move looks Valid.")
         update_gameboard_state(gameboard_state, Player, button_row, button_col)
         (buttons[button_row][button_col])["text"] = Player
     else:
-        print("Invalid move. Someone already played that square.")
+        if DEBUG_LVL >= 1: print("Invalid move. Someone already played that square.")
 
 tk.mainloop()   # Run the TKinter Main GUI Program, i.e. show it on the screen.
