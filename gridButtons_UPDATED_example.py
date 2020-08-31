@@ -32,13 +32,13 @@ def move_is_valid(gameboard_state, row, col):
     return False
 
 def update_gameboard_state(gameboard_state, player, row, col):
-    """ If player=="X", then store "X" at the correct position (i.e., (rox,col) )
+    """ If player=="X", then store "X" at the correct position (i.e., (row,col) )
         in the 'gameboard_state' array variable
     """
     gameboard_state[row][col] = player
 
-# A Dictionary to contain references to each of the 3x3 = 9 TKinter Buttons in the GUI.
-# Initialise then as blank/empty (i.e., None). We will put the actual buttons
+# This 'buttons' Dictionary is to contain references to each of the 3x3 = 9 TKinter Buttons in the GUI.
+# We initialise them as blank/empty (i.e., None). We will put the actual Buttons
 # into the correct slots during the Button construction double For-loop (see below).
 buttons = {  0: {0:None, 1:None, 2:None} ,
              1: {0:None, 1:None, 2:None} ,
