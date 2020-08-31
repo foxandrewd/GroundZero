@@ -3,7 +3,7 @@ from ttt_helper_fns import *
 
 DEBUG_LVL = 3
 
-root = tk.Tk()  # Create the top-level Window object. It's not displayed yet, though!
+root = tk.Tk()  # Create the top-level TKinter Window object. Here, we called it 'root'. It's not displayed to the screen yet, though!
 
 Player = "X"    # The player whose Turn it currently is (i.e., "X" or "O")
 
@@ -12,13 +12,21 @@ gameboard_state = [ ['','',''],       # A blank (starting) gameboard state
                     ['','',''] ]
 
 def newgame_clear_board(gameboard_state):
+  """ Completely clear the state of all spots on the 3x3 GameBoard.
+  """
     for i in range(3):
         for j in range(3):
             gameboard_state[i][j] = ''
     return gameboard_state
   
 def move_is_valid(gameboard_state, row, col):
-  if gameboard_state[row][col] == '':
+  """ Check if the move is valid or not. If the spot (row,col) on the
+      GameBoard is clear/empty (i.e., equal to the empty string "")
+      then this is a valid move for the current Player. Else, it's invalid.
+      This function must return True if the move is valid, and must return
+      False if the move is invalid.
+  """
+  if gameboard_state[row][col] == "":
     return True
   else:
     return False
