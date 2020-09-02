@@ -53,6 +53,14 @@ def O_has_won(gameboard_state):
     else:
         return False
 
+def current_player_has_won(gameboard_state, player):
+    if player == "X" and X_has_won(gameboard_state):
+        return True
+    elif player == "O" and O_has_won(gameboard_state):
+        return True
+    else:
+        return False
+
 def check_draw(gameboard_state):
     if gameboard_is_full(gameboard_state):
         if   X_has_won(gameboard_state): return False
