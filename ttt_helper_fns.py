@@ -3,7 +3,7 @@
 Created on Wed Aug 26 14:22:26 2020
 Project Zero - "GroundZero" project
 Developers: Andrew Fox and Reuben Corrigan
-@authors: Andrew Fox, Reuben Corrigan
+@authors: Andrew Fox and Reuben Corrigan
 """
 
 X_WIN_STRING = 'XXX'
