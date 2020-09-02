@@ -64,6 +64,7 @@ for rowN in range(3):
 # Function: 'doStuffOnClick'
 # What to check and the procedure to follow when the current Player clicks one of the 9 Buttons.
 def doStuffOnClick(r, c):
+    global Player
     theButton = buttons[r][c]
     if DEBUG_LVL >= 2: print("The button name/ID is: " + str(theButton) )
     #theButtonPos = button_pos[theButton]
@@ -74,12 +75,11 @@ def doStuffOnClick(r, c):
         if DEBUG_LVL >= 1: print("That move looks Valid.")
         update_gameboard_state(gameboard_state, Player, button_row, button_col)
         (buttons[button_row][button_col])["text"] = Player
+        if Player == "X":
+          Player = "O"
+        else:
+          Player = "X"
     else:
         if DEBUG_LVL >= 1: print("Invalid move. Someone already played that square.")
-    if Player == "X":
-      Player = "O"
-    else:
-      Player == "O":
-        Player = "X"
 
 tk.mainloop()   # Run the TKinter Main GUI Program, i.e. show it on the screen.
