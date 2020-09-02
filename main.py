@@ -76,5 +76,10 @@ def doStuffOnClick(r, c):
         (buttons[button_row][button_col])["text"] = Player
     else:
         if DEBUG_LVL >= 1: print("Invalid move. Someone already played that square.")
+    if Player == "X":
+      Player = "O"
+    else:
+      Player == "O":
+        Player = "X"
 
 tk.mainloop()   # Run the TKinter Main GUI Program, i.e. show it on the screen.
