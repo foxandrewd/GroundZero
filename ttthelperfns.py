@@ -66,6 +66,8 @@ def check_draw(gameboard_state):
         if   X_has_won(gameboard_state): return False
         elif O_has_won(gameboard_state): return False
         else:                            return True
+    else:
+        return False
 
 def check_row_win(gameboard_state):
     for i in range(3):
