@@ -41,6 +41,7 @@ def X_has_won(gameboard_state):
     if check_row_win(gameboard_state)       == X_WIN_STRING \
        or check_column_win(gameboard_state) == X_WIN_STRING \
        or check_diag_win(gameboard_state)   == X_WIN_STRING:
+        print("X won this game. Well done Player X !!!")   
         return True
     else:
         return False
@@ -49,6 +50,7 @@ def O_has_won(gameboard_state):
     if check_row_win(gameboard_state)       == O_WIN_STRING \
        or check_column_win(gameboard_state) == O_WIN_STRING \
        or check_diag_win(gameboard_state)   == O_WIN_STRING:
+        print("O won this game. Well done Player O !!!")
         return True
     else:
         return False
@@ -65,7 +67,9 @@ def check_draw(gameboard_state):
     if gameboard_is_full(gameboard_state):
         if   X_has_won(gameboard_state): return False
         elif O_has_won(gameboard_state): return False
-        else:                            return True
+        else:
+            print("This game was a draw!!!")
+            return True
     else:
         return False
 
