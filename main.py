@@ -1,5 +1,5 @@
 import tkinter as tk  # Import the TKinter library/module so we can use it
-from ttt_helper_fns import *
+from ttthelperfns import *
 
 DEBUG_LVL = 3
 
