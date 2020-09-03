@@ -2,8 +2,10 @@
 """
 Created on Thu Sep  3 17:13:34 2020
 
-@author: foxa
+@author: Andrew Fox
+@author: Reuben Corrigan
 """
+
 import tkinter as tk  # Import the TKinter library/module so we can use it
 from tkinter import messagebox
 import tkinter.font
