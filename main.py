@@ -90,8 +90,8 @@ def doStuffOnClick(r, c):
         if DEBUG_LVL >= 1: print("That move looks Valid.")
         update_gameboard_state(gameboard_state, Player, button_row, button_col)
         (buttons[button_row][button_col])["text"] = Player
-        ## We need to check if 'Player' has won the game - NB: there is a function in helpers.py that can do this!
-        ## Also need to check if the game has been a Draw - NB: there is a function in helpers.py that can do this!
+        ## We need to check if 'Player' has won the game - NB: there is a function in helpers.py that can do this called: current_player_has_won()
+        ## Also need to check if the game has been a Draw - NB: there is a function in helpers.py that can do this called: check_draw()
         
         ## If the game is finished (i.e., if gameboard_is_full(gameboard_state) ), we need to call the 'newgame_clear_board' function
         ## and we also Need to call the 'newgame_clear_all_buttons_text' function
