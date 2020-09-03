@@ -93,10 +93,9 @@ def doStuffOnClick(r, c):
         ## We need to check if 'Player' has won the game - NB: there is a function in helpers.py that can do this!
         ## Also need to check if the game has been a Draw - NB: there is a function in helpers.py that can do this!
         
-        ## If the game is finished, need to call the 'newgame_clear_board' function
-        ## and we also need to call the 'newgame_clear_all_buttons_text' function
-        
-        ## Need to update num_X_wins, num_O_wins or num_draws
+        ## If the game is finished (i.e., if gameboard_is_full(gameboard_state) ), we need to call the 'newgame_clear_board' function
+        ## and we also Need to call the 'newgame_clear_all_buttons_text' function
+        ## and we also Need to update num_X_wins, num_O_wins or num_draws
         
         if Player == "X":
           Player = "O"
