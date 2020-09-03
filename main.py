@@ -90,7 +90,6 @@ def doStuffOnClick(r, c):
     global Player, num_X_wins, num_O_wins, num_draws
     theButton = buttons[r][c]
     if DEBUG_LVL >= 2: print("The button name/ID is: " + str(theButton) )
-    #theButtonPos = button_pos[theButton]
     (button_row, button_col) = button_pos[theButton]
     if DEBUG_LVL >= 2: print("Button Clicked was: Row=" + str(button_row) + \
           ", Column=" + str(button_col) )                        # Backslash ('\') lets you continue ur code statement on the next line
