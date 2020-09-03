@@ -21,19 +21,23 @@ def newgame_clear_board(gameboard_state):
     return gameboard_state
   
 def move_is_valid(gameboard_state, row, col):
-  if gameboard_state[row][col] == '':
-    return True
-  else:
-    return False
+    """ Return True if the boardsquare is blank ( i.e., if it equals the empty-string ('') )
+        Because the move is valid if the Player has chosen (clicked on) a blank boardsquare.
+        Otherwise, return False. Because the Player has chosen a NON-blank square- an invalid move
+    """
+    if gameboard_state[row][col] == '':
+        return True
+    else:
+        return False
 
 def update_gameboard_state(gameboard_state, player, row, col):
-  gameboard_state[row][col] = player
+    gameboard_state[row][col] = player
 
 def gameboard_is_full(gameboard_state):
+    """ Return True is the GameBoard is full, else return False"""
     for i in range(3):
         for j in range(3):
-            if gameboard_state[i][j] == '':
-                return False
+            if gameboard_state[i][j] == '': return False
     # If we have made it to this point without ever having returned False ('cos of a blank ('') gamesquare)
     # then that means that all 9 gamesquares were NON-blank. This means that the gameboard
     # is completely full of X's and O's. So, we should return True at this point. And that's what we do:
