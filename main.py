@@ -3,13 +3,16 @@ from helpers import *
 
 DEBUG_LVL = 3
 
-root = tk.Tk()  # Create the top-level TKinter Window object. Here, we called it 'root'. It's not displayed to the screen yet, though!
+root = tk.Tk() """ Create the top-level TKinter Window object. Here, we have called it 'root'. 
+                   It's not displayed to the screen yet, though!
+                   Because we haven't called tk.mainloop() yet. """
 
 Player = "X"    # The player whose Turn it currently is (i.e., "X" or "O")
 
+# Global variable integers to keep track of the number of X wins, O wins and draws:
 num_X_wins = 0
 num_O_wins = 0
-num_draws = 0
+num_draws  = 0
 
 gameboard_state = [  ['','',''] ,       # A blank (starting) gameboard state
                      ['','',''] ,
@@ -17,16 +20,19 @@ gameboard_state = [  ['','',''] ,       # A blank (starting) gameboard state
 
 def newgame_clear_board(gameboard_state):
   """ Completely clear the state of all spots on the 3x3 GameBoard.
-  """
+      We blank out all 3x3=9 cells in the gameboard_state data structure """
     for i in range(3):
         for j in range(3):
-            gameboard_state[i][j] = ''
+            gameboard_state[i][j] = ''    # Set the cell state equal to blank ( i.e., to the empty-string ('') )
     return gameboard_state
   
 def newgame_clear_all_buttons_text(buttons):
-    pass
-## Need to implement this above function to clear the ["text"] of all 9 tk.Button()'s
-## Note that all 9 tk.Button()'s are stored in the global variable called 'buttons'
+    ## Need to implement this function to clear the ["text"] of all 9 tk.Button()'s
+    ## Note that all 9 tk.Button()'s are stored in the global variable called 'buttons'
+    for i in range(3):
+        for j in range(3):
+            (buttons[i][j])["text"] = ''    # Set the tk.Button text equal to blank ( i.e., to the empty-string ('') )
+    return buttons
   
 def move_is_valid(gameboard_state, row, col):
   """ Check if the move is valid or not. If the spot (row,col) on the
