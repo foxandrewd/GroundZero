@@ -73,11 +73,22 @@ buttons = {  0: {0:None, 1:None, 2:None} ,
 # specifying where that particular button is on the GameBoard.
 button_pos = {}     # Begin as empty dict, we fill it out during the Button construction double For-loop directly below:
 
+frame_turn = tk.Frame(root)
+frame_turn.pack(side=tk.TOP)
+
+label_turn = tk.Label(frame_turn, text="Current Player's Turn:  " + Player)
+label_turn['font'] = labelsFont
+label_turn.pack(side=tk.TOP)
+
+frame_board = tk.Frame(root)
+frame_board.pack(side=tk.TOP)
+
+
 # This is the Button construction double For-loop
 # Make the 3x3 array of 9 buttons, store each one of them into the correct slot in the 'buttons' variable we initialised above.
 for rowN in range(3):
     for colN in range(3):
-        button = tk.Button(root, text = "", height=3, width=6, command = lambda r=rowN, c=colN: doStuffOnClick(r,c) )
+        button = tk.Button(frame_board, text = "", height=1, width=3, command = lambda r=rowN, c=colN: doStuffOnClick(r,c) )
         button['font'] = buttonFont
         button.grid(row=rowN, column=colN)      # Place this new button into the current TKinter grid layout
         buttons[rowN][colN] = button            # Save this new button into the "buttons" List variable
