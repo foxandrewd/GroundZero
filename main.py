@@ -97,14 +97,17 @@ def doStuffOnClick(r, c):
           if Player =="X":
               num_X_wins += 1
               print("num_X_wins: ",num_X_wins)
+              messagebox.showinfo(message = "Player X won: Well done Player X!")
           else:
               num_O_wins += 1
               print("num_O_wins: ", num_O_wins)
+              messagebox.showinfo(message = "Player O won: Well done Player O!")
         if check_draw(gameboard_state):
           newgame_clear_board(gameboard_state)
           newgame_clear_all_buttons_text(buttons)
           num_draws +=1
           print("num_draws: ",num_draws)
+          messagebox.showinfo(message = "Game was a Draw")
         ## We need to check if 'Player' has won the game - NB: there is a function in helpers.py that can do this called: current_player_has_won()
         ## Also need to check if the game has been a Draw - NB: there is a function in helpers.py that can do this called: check_draw()
         
