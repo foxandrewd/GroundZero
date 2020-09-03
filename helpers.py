@@ -34,7 +34,9 @@ def gameboard_is_full(gameboard_state):
         for j in range(3):
             if gameboard_state[i][j] == '':
                 return False
-    # All the board positions were filled with X or O. Hence, it's full.
+    # If we have made it to this point without ever having returned False ('cos of a blank ('') gamesquare)
+    # then that means that all 9 gamesquares were NON-blank. This means that the gameboard
+    # is completely full of X's and O's. So, we should return True at this point. And that's what we do:
     return True
 
 def X_has_won(gameboard_state):
