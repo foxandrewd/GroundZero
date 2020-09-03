@@ -4,10 +4,7 @@ from helpers import *
 
 DEBUG_LVL = 3
 
-root = tk.Tk() """ Create the top-level TKinter Window object. Here, we have called it 'root'. 
-                   It's not displayed to the screen yet, though!
-                   Because we haven't called tk.mainloop() yet. """
-
+root = tk.Tk()
 Player = "X"    # The player whose Turn it currently is (i.e., "X" or "O")
 
 # Global variable integers to keep track of the number of X wins, O wins and draws:
@@ -20,7 +17,7 @@ gameboard_state = [  ['','',''] ,       # A blank (starting) gameboard state
                      ['','','']  ]
 
 def newgame_clear_board(gameboard_state):
-  """ Completely clear the state of all spots on the 3x3 GameBoard.
+    """ Completely clear the state of all spots on the 3x3 GameBoard.
       We blank out all 3x3=9 cells in the gameboard_state data structure """
     for i in range(3):
         for j in range(3):
