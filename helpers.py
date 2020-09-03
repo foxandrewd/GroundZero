@@ -9,11 +9,6 @@ Developers: Andrew Fox and Reuben Corrigan
 X_WIN_STRING = 'XXX'
 O_WIN_STRING = 'OOO'
 
-gameboard_state = [ ['','',''],       # A blank (starting) gameboard state
-                    ['','',''],
-                    ['','','']
-                  ]
-
 def newgame_clear_board(gameboard_state):
     for i in range(3):
         for j in range(3):
