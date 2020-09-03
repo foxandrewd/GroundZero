@@ -27,8 +27,8 @@ def newgame_clear_board(gameboard_state):
     return gameboard_state
   
 def newgame_clear_all_buttons_text(buttons):
-    ## Need to implement this function to clear the ["text"] of all 9 tk.Button()'s
-    ## Note that all 9 tk.Button()'s are stored in the global variable called 'buttons'
+    ## This function clears the ["text"] of all 9 tk.Button()'s in the GUI Game Board
+    ## Note that the tk.Button()'s are all stored in the (parameter) variable 'buttons'
     for i in range(3):
         for j in range(3):
             (buttons[i][j])["text"] = ''    # Set the tk.Button text equal to blank ( i.e., to the empty-string ('') )
