@@ -19,9 +19,9 @@ buttonFont = tkinter.font.Font(size=60, weight='bold')
 labelsFont = tkinter.font.Font(size=18, weight='bold')
 statsFont  = tkinter.font.Font(size=14, weight='bold')
 
-Player = "X"    # The player whose Turn it currently is (i.e., "X" or "O")
+Player = "X"    # The player whose Turn it currently is (can be either "X" or "O")
 
-# Global variable integers to keep track of the number of X wins, O wins and draws:
+# Global variable integers to keep track of the number of X wins, O wins and Draws:
 num_X_wins = 0
 num_O_wins = 0
 num_draws  = 0
