@@ -11,8 +11,10 @@ from helpers import *
 
 DEBUG_LVL = 0
 
-root = tk.Tk( className = "Tic-Tac-Toe" )
-buttonFont = tkinter.font.Font(size=30, weight='bold')
+root = tk.Tk()
+root.title('Tic-Tac-Toe')
+buttonFont = tkinter.font.Font(size=60, weight='bold')
+labelsFont = tkinter.font.Font(size=18, weight='bold')
 
 Player = "X"    # The player whose Turn it currently is (i.e., "X" or "O")
 
