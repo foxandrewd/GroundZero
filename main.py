@@ -1,10 +1,19 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Sep  3 17:13:34 2020
+
+@author: foxa
+"""
 import tkinter as tk  # Import the TKinter library/module so we can use it
 from tkinter import messagebox
+import tkinter.font
 from helpers import *
 
-DEBUG_LVL = 3
+DEBUG_LVL = 0
 
-root = tk.Tk()
+root = tk.Tk( className = "Tic-Tac-Toe" )
+buttonFont = tkinter.font.Font(size=30, weight='bold')
+
 Player = "X"    # The player whose Turn it currently is (i.e., "X" or "O")
 
 # Global variable integers to keep track of the number of X wins, O wins and draws:
@@ -67,6 +76,7 @@ button_pos = {}     # Begin as empty dict, we fill it out during the Button cons
 for rowN in range(3):
     for colN in range(3):
         button = tk.Button(root, text = "", height=3, width=6, command = lambda r=rowN, c=colN: doStuffOnClick(r,c) )
+        button['font'] = buttonFont
         button.grid(row=rowN, column=colN)      # Place this new button into the current TKinter grid layout
         buttons[rowN][colN] = button            # Save this new button into the "buttons" List variable
         button_pos[button] = (rowN, colN)       # Save the position of this button into the "button_pos" Dict
@@ -93,13 +103,13 @@ def doStuffOnClick(r, c):
                 num_X_wins += 1
                 print("Num X wins: ", num_X_wins)
                 print("Num O wins: ", num_O_wins)
-                print("Num  Draws: ", num_draws)
+                print("Num Draws : ", num_draws)
                 messagebox.showinfo(message = "Player X won: Well done Player X!")
             else:
                 num_O_wins += 1
                 print("Num X wins: ", num_X_wins)
                 print("Num O wins: ", num_O_wins)
-                print("Num  Draws: ", num_draws)
+                print("Num Draws : ", num_draws)
                 messagebox.showinfo(message = "Player O won: Well done Player O!")
             # Clear the Board for the next Game    
             newgame_clear_board(gameboard_state)
@@ -108,7 +118,7 @@ def doStuffOnClick(r, c):
             num_draws +=1
             print("Num X wins: ", num_X_wins)
             print("Num O wins: ", num_O_wins)
-            print("Num  Draws: ", num_draws)
+            print("Num Draws : ", num_draws)
             messagebox.showinfo(message = "Game was a Draw")
             # Clear the Board for the next Game
             newgame_clear_board(gameboard_state)
