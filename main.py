@@ -144,8 +144,12 @@ def doStuffOnClick(r, c):
         ## and we also needed to update num_X_wins, num_O_wins or num_draws
         
         # Swap the Player for the next turn:
-        if Player == "X": Player = "O"
-        else:             Player = "X"
+        if Player == "X":
+            Player = "O"
+            label_turn["text"] = "Current Player's Turn:  " + Player
+        else:
+            Player = "X"
+            label_turn["text"] = "Current Player's Turn:  " + Player
     else:
         if DEBUG_LVL >= 1: print("Invalid move. Someone already played that square.")
 
