@@ -7,6 +7,10 @@ root = tk.Tk()  # Create the top-level TKinter Window object. Here, we called it
 
 Player = "X"    # The player whose Turn it currently is (i.e., "X" or "O")
 
+num_X_wins = 0
+num_O_wins = 0
+num_draws = 0
+
 gameboard_state = [  ['','',''] ,       # A blank (starting) gameboard state
                      ['','',''] ,
                      ['','','']  ]
@@ -18,6 +22,11 @@ def newgame_clear_board(gameboard_state):
         for j in range(3):
             gameboard_state[i][j] = ''
     return gameboard_state
+  
+def newgame_clear_all_buttons_text(buttons):
+    pass
+## Need to implement this above function to clear the ["text"] of all 9 tk.Button()'s
+## Note that all 9 tk.Button()'s are stored in the global variable called 'buttons'
   
 def move_is_valid(gameboard_state, row, col):
   """ Check if the move is valid or not. If the spot (row,col) on the
@@ -75,6 +84,14 @@ def doStuffOnClick(r, c):
         if DEBUG_LVL >= 1: print("That move looks Valid.")
         update_gameboard_state(gameboard_state, Player, button_row, button_col)
         (buttons[button_row][button_col])["text"] = Player
+        ## We need to check if 'Player' has won the game - NB: there is a function in helpers.py that can do this!
+        ## Also need to check if the game has been a Draw - NB: there is a function in helpers.py that can do this!
+        
+        ## If the game is finished, need to call the 'newgame_clear_board' function
+        ## and we also need to call the 'newgame_clear_all_buttons_text' function
+        
+        ## Need to update num_X_wins, num_O_wins or num_draws
+        
         if Player == "X":
           Player = "O"
         else:
