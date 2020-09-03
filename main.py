@@ -77,7 +77,7 @@ for rowN in range(3):
 # Function: 'doStuffOnClick'
 # What to check and the procedure to follow when the current Player clicks one of the 9 Buttons.
 def doStuffOnClick(r, c):
-    global Player
+    global Player, num_X_wins, num_O_wins, num_draws
     theButton = buttons[r][c]
     if DEBUG_LVL >= 2: print("The button name/ID is: " + str(theButton) )
     #theButtonPos = button_pos[theButton]
@@ -89,8 +89,6 @@ def doStuffOnClick(r, c):
         update_gameboard_state(gameboard_state, Player, button_row, button_col)
         (buttons[button_row][button_col])["text"] = Player
         if current_player_has_won(gameboard_state, Player):
-            newgame_clear_board(gameboard_state)
-            newgame_clear_all_buttons_text(buttons)
             if Player =="X":
                 num_X_wins += 1
                 print("num_X_wins: ",num_X_wins)
@@ -99,12 +97,15 @@ def doStuffOnClick(r, c):
                 num_O_wins += 1
                 print("num_O_wins: ", num_O_wins)
                 messagebox.showinfo(message = "Player O won: Well done Player O!")
-        if check_draw(gameboard_state):
             newgame_clear_board(gameboard_state)
             newgame_clear_all_buttons_text(buttons)
+        if check_draw(gameboard_state):
             num_draws +=1
             print("num_draws: ",num_draws)
             messagebox.showinfo(message = "Game was a Draw")
+            newgame_clear_board(gameboard_state)
+            newgame_clear_all_buttons_text(buttons)
+            
         ## We need to check if 'Player' has won the game - NB: there is a function in helpers.py that can do this called: current_player_has_won()
         ## Also need to check if the game has been a Draw - NB: there is a function in helpers.py that can do this called: check_draw()
         
