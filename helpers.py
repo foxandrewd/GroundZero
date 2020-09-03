@@ -6,6 +6,8 @@ Developers: Andrew Fox and Reuben Corrigan
 @authors: Andrew Fox and Reuben Corrigan
 """
 
+DEBUG = False
+
 X_WIN_STRING = 'XXX'
 O_WIN_STRING = 'OOO'
 
@@ -149,10 +151,10 @@ a_draw_state = [ ['X','O','O'],
                  ['O','X','X'],
                  ['O','X','O']
                ]
-
-# Run the tests. Should print out 'XXX', 'OOO', 'XXX', 'OOO', 'True'
-w = check_row_win(X_win_row_1);    print(w)
-x = check_column_win(O_win_col_2); print(x)
-y = check_diag_win(X_win_diag1);   print(y)
-z = check_diag_win(O_win_diag2);   print(z)
-a = check_draw(a_draw_state);      print(a)
+if DEBUG:
+    # Run the tests. Should print out 'XXX', 'OOO', 'XXX', 'OOO', 'True'
+    w = check_row_win(X_win_row_1);    print(w)
+    x = check_column_win(O_win_col_2); print(x)
+    y = check_diag_win(X_win_diag1);   print(y)
+    z = check_diag_win(O_win_diag2);   print(z)
+    a = check_draw(a_draw_state);      print(a)
