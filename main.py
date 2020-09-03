@@ -115,43 +115,37 @@ def doStuffOnClick(r, c):
         if current_player_has_won(gameboard_state, Player):
             if Player =="X":
                 num_X_wins += 1
-                print("Num X wins: ", num_X_wins)
-                print("Num O wins: ", num_O_wins)
-                print("Num Draws : ", num_draws)
+                print("Num X wins: ", num_X_wins); print("Num O wins: ", num_O_wins); print("Num Draws : ", num_draws)
                 messagebox.showinfo(message = "Player X won: Well done Player X!")
             else:
                 num_O_wins += 1
-                print("Num X wins: ", num_X_wins)
-                print("Num O wins: ", num_O_wins)
-                print("Num Draws : ", num_draws)
+                print("Num X wins: ", num_X_wins); print("Num O wins: ", num_O_wins); print("Num Draws : ", num_draws)
                 messagebox.showinfo(message = "Player O won: Well done Player O!")
             # Clear the Board for the next Game    
             newgame_clear_board(gameboard_state)
             newgame_clear_all_buttons_text(buttons)
         if check_draw(gameboard_state):
             num_draws +=1
-            print("Num X wins: ", num_X_wins)
-            print("Num O wins: ", num_O_wins)
-            print("Num Draws : ", num_draws)
+            print("Num X wins: ", num_X_wins); print("Num O wins: ", num_O_wins); print("Num Draws : ", num_draws)
             messagebox.showinfo(message = "Game was a Draw")
             # Clear the Board for the next Game
             newgame_clear_board(gameboard_state)
             newgame_clear_all_buttons_text(buttons)
             
-        ## We needed to check if 'Player' has won the game - NB: there is a function in helpers.py that can do this called: current_player_has_won()
-        ## Also needed to check if the game has been a Draw - NB: there is a function in helpers.py that can do this called: check_draw()
+        ## Above, we needed to check if 'Player' has won the game - NB: there is a function in helpers.py that can do this called: current_player_has_won(...)
+        ## Also needed to check if the game has been a Draw - NB: there is a function in helpers.py that can do this called: check_draw(...)
         
-        ## If the game finished (i.e., if gameboard_is_full(gameboard_state) ), we needed to call the 'newgame_clear_board' function
-        ## and we also needed to call the 'newgame_clear_all_buttons_text' function
-        ## and we also needed to update num_X_wins, num_O_wins or num_draws
+        ## If the game finished (X wins, O wins or it's a Draw), we also needed to call the newgame_clear_board(...) function,
+        ## and we also needed to call the newgame_clear_all_buttons_text(...) function,
+        ## and we also needed to update num_X_wins, num_O_wins or num_draws appropriately
         
         # Swap the Player for the next turn:
         if Player == "X":
             Player = "O"
-            label_turn["text"] = "Current Player's Turn:  " + Player
+            label_turn["text"] = "Current Player's Turn:  " + Player    # Update the display label at the top showing whose turn it is
         else:
             Player = "X"
-            label_turn["text"] = "Current Player's Turn:  " + Player
+            label_turn["text"] = "Current Player's Turn:  " + Player    # Update the display label at the top showing whose turn it is
     else:
         if DEBUG_LVL >= 1: print("Invalid move. Someone already played that square.")
 
