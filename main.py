@@ -75,15 +75,15 @@ buttons = {  0: {0:None, 1:None, 2:None} ,
 # specifying where that particular button is on the GameBoard.
 button_pos = {}     # Begin as empty dict, we fill it out during the Button construction double For-loop directly below:
 
-frame_turn = tk.Frame(root)
-frame_turn.pack(side=tk.TOP)
+frame_turn = tk.Frame(root)       # A frame that will hold ONLY the tk.Label that displays whose turn it is
+frame_turn.pack(side=tk.TOP)      # This should be at the TOP of the window
 
-label_turn = tk.Label(frame_turn, text="Current Player's Turn:  " + Player)
-label_turn['font'] = labelsFont
-label_turn.pack(side=tk.TOP)
+label_turn = tk.Label(frame_turn, text="Current Player's Turn:  " + Player)   # The actual label that displays whose turn it is
+label_turn['font'] = labelsFont   # Make the font of this label equal to "labelsFont", which is defined earlier in this script
+label_turn.pack(side=tk.TOP)      # Add this label into its parent frame (i.e., into "frame_turn")
 
-frame_board = tk.Frame(root)
-frame_board.pack(side=tk.TOP)
+frame_board = tk.Frame(root)      # Make the tk.Frame that will hold the GameBoard (it will hold all 9 tk.Buttons's of the 3x3 grid)
+frame_board.pack(side=tk.TOP)     # Add ("pack") this frame into its parent element. Its parent element is 'root' (the main window)
 
 
 # This is the Button construction double For-loop
