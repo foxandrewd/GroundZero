@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Sep  3 17:13:34 2020
-
 @author: Andrew Fox
 @author: Reuben Corrigan
 """
@@ -44,14 +43,21 @@ button_pos = {}     # Begin as empty dict, we fill it out during the Button cons
 frame_turn = tk.Frame(root)       # A frame that will hold ONLY the tk.Label that displays whose turn it is
 frame_turn.pack(side=tk.TOP)      # This should be at the TOP of the 'root' window
 
+
 label_turn = tk.Label(frame_turn, text="Current Player's Turn:  " + Player)   # The label displaying whose turn. Its parent frame is 'frame_turn'.
 label_turn['font'] = labelsFont   # Make the font of this label equal to "labelsFont", which is defined earlier in this script.
 label_turn.pack(side=tk.TOP)      # Add this label into its parent frame (i.e., into "frame_turn"). Pack it towards the TOP.
 
+
 frame_board = tk.Frame(root)      # Make the tk.Frame that will hold the GameBoard (it will hold all 9 tk.Buttons's of the 3x3 grid)
 frame_board.pack(side=tk.TOP)     # Add (i.e., "pack") this frame into its parent element. Its parent element is 'root' (the main window)
 
+frame_wins = tk.Frame(root)
+frame_wins.pack(side=tk.BOTTOM)
 
+label_X = tk.Label(frame_wins, text="X Wins: " + str(num_X_wins) + "  draws: " + str(num_draws) + "  O Wins: " + str(num_O_wins))
+label_X.pack()
+label_X['font'] = labelsFont
 # This is the Button construction double For-loop
 # Make the 3x3 array of 9 buttons, store each one of them into the correct slot in the 'buttons' variable we initialised above.
 for rowN in range(3):
@@ -83,17 +89,20 @@ def doStuffOnClick(r, c):
                 num_X_wins += 1
                 print("Num X wins: ", num_X_wins); print("Num O wins: ", num_O_wins); print("Num Draws : ", num_draws)
                 messagebox.showinfo(message = "Player X won: Well done Player X!")
+                label_X["text"] = "X Wins: " + str(num_X_wins) + "  draws: " + str(num_draws) + "  O Wins: " + str(num_O_wins)
             else:
                 num_O_wins += 1
                 print("Num X wins: ", num_X_wins); print("Num O wins: ", num_O_wins); print("Num Draws : ", num_draws)
                 messagebox.showinfo(message = "Player O won: Well done Player O!")
-            # Clear the Board for the next Game    
+                label_X["text"] = "X Wins: " + str(num_X_wins) + "  draws: " + str(num_draws) + "  O Wins: " + str(num_O_wins)
+                # Clear the Board for the next Game    
             newgame_clear_board(gameboard_state)
             newgame_clear_all_buttons_text(buttons)
         if check_draw(gameboard_state):
             num_draws +=1
             print("Num X wins: ", num_X_wins); print("Num O wins: ", num_O_wins); print("Num Draws : ", num_draws)
             messagebox.showinfo(message = "Game was a Draw")
+            label_X["text"] = "X Wins: " + str(num_X_wins) + "  draws: " + str(num_draws) + "  O Wins: " + str(num_O_wins)
             # Clear the Board for the next Game
             newgame_clear_board(gameboard_state)
             newgame_clear_all_buttons_text(buttons)
