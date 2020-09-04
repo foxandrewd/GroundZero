@@ -12,22 +12,37 @@ X_WIN_STRING = 'XXX'
 O_WIN_STRING = 'OOO'
 
 def newgame_clear_board(gameboard_state):
+    """ Completely clear the state of all spots on the 3x3 GameBoard.
+      We blank out all 3x3=9 cells in the gameboard_state data structure """
     for i in range(3):
         for j in range(3):
-            gameboard_state[i][j] = ''
+            gameboard_state[i][j] = ''    # Set the cell state equal to blank ( i.e., to the empty-string ('') )
     return gameboard_state
   
+def newgame_clear_all_buttons_text(buttons):
+    ## This function clears the ["text"] of all 9 tk.Button()'s in the GUI Game Board
+    ## Note that the tk.Button()'s are all stored in the (parameter) variable 'buttons'
+    for i in range(3):
+        for j in range(3):
+            (buttons[i][j])["text"] = ''    # Set the tk.Button text equal to blank ( i.e., to the empty-string ('') )
+    return buttons
+  
 def move_is_valid(gameboard_state, row, col):
-    """ Return True if the boardsquare is blank ( i.e., if it equals the empty-string ('') )
-        Because the move is valid if the Player has chosen (clicked on) a blank boardsquare.
-        Otherwise, return False. Because the Player has chosen a NON-blank square- an invalid move
-    """
-    if gameboard_state[row][col] == '':
-        return True
-    else:
-        return False
+  """ Check if the move is valid or not. If the spot (row,col) on the
+      GameBoard is clear/empty (i.e., equal to the empty string "")
+      then this is a valid move for the current Player. Else, it's invalid.
+      This function must return True if the move is valid, and must return
+      False if the move is invalid.
+  """
+  if gameboard_state[row][col] == "":
+    return True
+  else:
+    return False
 
 def update_gameboard_state(gameboard_state, player, row, col):
+    """ If player=="X", then store "X" at the correct position (i.e., (row,col) )
+        in the 'gameboard_state' array variable
+    """
     gameboard_state[row][col] = player
 
 def gameboard_is_full(gameboard_state):
