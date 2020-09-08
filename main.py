@@ -10,7 +10,7 @@ from tkinter import messagebox
 import tkinter.font
 from helpers import *
 
-DEBUG_LVL = 0
+DEBUG_LVL = 3
 
 root = tk.Tk()
 root.title('Tic-Tac-Toe')
@@ -83,7 +83,7 @@ def doStuffOnClick(r, c):
     if move_is_valid(gameboard_state, button_row, button_col):
         if DEBUG_LVL >= 1: print("That move looks Valid.")
         update_gameboard_state(gameboard_state, Player, button_row, button_col)
-        (buttons[button_row][button_col])["text"] = Player
+        buttons[button_row][button_col]["text"] = Player
         if current_player_has_won(gameboard_state, Player):
             if Player =="X":
                 num_X_wins += 1
