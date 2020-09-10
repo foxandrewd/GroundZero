@@ -10,7 +10,7 @@ from tkinter import messagebox
 import tkinter.font
 from helpers import *
 
-DEBUG_LVL = 3
+DEBUG_LVL = 11
 
 root = tk.Tk()
 root.title('Tic-Tac-Toe')
